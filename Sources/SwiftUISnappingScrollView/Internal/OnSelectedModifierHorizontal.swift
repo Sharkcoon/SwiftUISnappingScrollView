@@ -20,14 +20,14 @@ internal struct OnSelectedModifierHorizontal: ViewModifier {
                     let isSelected = abs((scrollViewFrame?.midX ?? 0) - geometry.frame(in: .global).midX) < 240
 
                     Color.clear
-                        .onAppear { onSelected(isSelected) }
-                        .onUpdate(of: isSelected, perform: onSelected)
+                        .onAppear { onSelectedHorizontal(isSelected) }
+                        .onUpdate(of: isSelected, perform: onSelectedHorizontal)
                 }
                 .hidden()
             )
     }
     
-    private func onSelected(_ newValue: Bool?) {
+    private func onSelectedHorizontal(_ newValue: Bool?) {
         if let newValue = newValue, isSelected != newValue {
             isSelected = newValue
             action(newValue)

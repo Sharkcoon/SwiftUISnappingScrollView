@@ -74,7 +74,9 @@ public extension View {
     func onSelected(action: @escaping (_ isSelected: Bool) -> Void) -> some View {
         modifier(OnSelectedModifier(action: action))
     }
+}
 
+public extension View {
     func onSelectedHorizontal(action: @escaping (_ isSelected: Bool) -> Void) -> some View {
         modifier(OnSelectedModifierHorizontal(action: action))
     }
